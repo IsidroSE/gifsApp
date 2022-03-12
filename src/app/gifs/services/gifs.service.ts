@@ -21,15 +21,18 @@ export class GifsService {
   constructor( private http: HttpClient ) {
 
     this._historial = JSON.parse( localStorage.getItem('historial')!) || [];
+    this.resultados = JSON.parse( localStorage.getItem('resultados')!) || [];
 
   }
 
   buscarGifs(query: string) {
 
+    debugger;
     if ( !this._historial.includes(query) ) {
       this._historial.unshift(query);
     }
     else {
+      
       const index = this._historial.indexOf(query, 0);
       if (index > -1) {
         this._historial.splice(index, 1);
@@ -47,6 +50,7 @@ export class GifsService {
     .subscribe( (response: any) => {
       console.log(response);
       this.resultados = response.data;
+      localStorage.setItem('resultados', JSON.stringify(this.resultados));
     });
   }
 
