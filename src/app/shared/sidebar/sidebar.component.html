@@ -8,8 +8,9 @@
 
     <div class="list-group list-reset">
         <a href="#"
-        class="list-group-item list-group-item-action">
-        Dashboard
+        class="list-group-item list-group-item-action"
+        *ngFor="let cadena of historial">
+        {{ cadena | titlecase }}
         </a>
     </div>
 </div>
