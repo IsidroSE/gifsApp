@@ -9,7 +9,8 @@
     <div class="list-group list-reset">
         <a href="#"
         class="list-group-item list-group-item-action"
-        *ngFor="let cadena of historial">
+        *ngFor="let cadena of historial"
+        (click)="buscar(cadena)">
         {{ cadena | titlecase }}
         </a>
     </div>
