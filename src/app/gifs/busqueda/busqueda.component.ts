@@ -12,7 +12,7 @@ export class BusquedaComponent implements OnInit {
   @ViewChild('txtBuscar')
   txtBuscar!: ElementRef<HTMLInputElement>;
   
-  constructor( private gifsService: GifsService) { }
+  constructor( private gifsService: GifsService ) { }
 
   ngOnInit(): void {
   }
